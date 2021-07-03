@@ -1,0 +1,12 @@
+#include <stdio.h>
+Int main() { 
+ Int num, i; 
+ Printf(“Enter a positive integer: “);  Scanf(“%d”, &num); 
+ Printf(“Factors of %d are: “, num);  For (i = 1; i <= num; ++i) { 
+ If (num % i == 0) { 
+ Printf(“%d “, i); 
+ } 
+ } 
+ Return 0; 
+}
+
