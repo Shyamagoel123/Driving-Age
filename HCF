@@ -1,0 +1,13 @@
+#include<stdio.h> 
+Int main() { 
+ Int a, b, i, hcf; 
+ A = 12; 
+ B = 16; 
+ For(i = 1; i <= a || i <= b; i++) { 
+ If( a%i == 0 && b%i == 0 ) 
+ Hcf = i; 
+ } 
+ Printf(“HCF = %d”, hcf); 
+  
+ Return 0; 
+} 
