@@ -1,0 +1,12 @@
+#include <stdio.h> 
+Int main() { 
+Int array[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0}; 
+Int l, s; 
+s = array[0]; 
+For(l = 1; l < 10; l++) { 
+If( s > array[l] )  
+s = array[l]; 
+} 
+Printf(“Smallest element of array is %d”, s); 
+Return 0; 
+} 
