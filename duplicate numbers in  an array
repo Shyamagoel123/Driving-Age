@@ -1,0 +1,23 @@
+#include <stdio.h> 
+Int main() 
+{ 
+Int arr[10], i, j, Size, Count = 0; 
+Printf(“\n Please Enter Number of elements in an array : “); Scanf(“%d”, &Size); 
+Printf(“\n Please Enter %d elements of an Array : “, Size); For (i = 0; i < Size; i++)
+{ 
+Scanf(“%d”, &arr[i]); 
+} 
+For (i = 0; i < Size; i++) 
+{ 
+For(j = i + 1; j < Size; j++) 
+{ 
+If(arr[i] == arr[j]) 
+{ 
+Count++; 
+Break; 
+} 
+} 
+} 
+Printf(“\n Total Number of Duplicate Elements in this Array = %d “, Count); 
+Return 0; 
+} 
