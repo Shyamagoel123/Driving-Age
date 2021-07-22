@@ -1,0 +1,130 @@
+#include <stdio.h>
+#include<stdlib.h>
+
+
+
+   
+     
+ typedef struct guest
+     {
+     char Name[30];
+     int age;
+     char Sex[6];
+     char ID[20];
+     int RoomNo;
+     }guest;
+     
+     
+     
+     
+     void create(){
+         guest s;
+         FILE*fp= fopen("hotelguests.dat","a+");
+         
+        
+         printf(" Enter Guests Details ");
+         
+         
+    printf("\n Name:");
+    scanf("%s",s.Name);
+    printf("\n Age:");
+    scanf("%i",&s.age);
+    printf("\n Gender:");
+    scanf("%s",s.Sex);
+    printf(" \n ID:");
+    scanf("%s",s.ID);
+    printf("\n Room No:");
+    scanf("%d",&s.RoomNo);
+    printf("Guests Details are stored");
+    if (s.Name!=0, s.age!=0 , s.Sex!=0 , s.ID!=0 , s.RoomNo!=0)
+    fwrite(&s,sizeof(guest),10,fp);
+    fclose(fp);
+     }
+     
+     
+     
+     
+     
+     void delete(){
+         guest s1;
+         char name[100];
+         
+         FILE*fp= fopen("hotelguests.dat","r+");
+         FILE*fp1=fopen("deleteguest.dat","w");
+         printf(" Enter The Name You Want To Delete");
+                 scanf("%s",&name);
+         
+
+         if (fp==NULL){
+             printf("Cant open File");
+             exit(0);
+         }
+         while (fread(&s1,sizeof(guest),10,fp))
+         {
+             if(s1.Name!=name)
+             {
+                 fwrite(&s1,sizeof(guest),10,fp1);
+             }
+             
+             
+         }
+         
+        fclose(fp);
+        fclose(fp1);
+         
+     }
+     void list(){
+         guest s1;
+         FILE*fp=fopen("hotelguests.dat","r");
+                  while(fread(&s1,sizeof(guest),10,fp))
+         printf("\n Name : %s Age : %d Gender : %s ID :%s RoomNo : %d ", s1.Name, s1.age ,s1.Sex , s1.ID ,s1.RoomNo );
+        
+         
+        
+     }
+     
+     int main(){
+     
+
+
+
+
+
+{
+ int choose;
+ do{
+
+printf("\n 1.Check in  A New Guest");
+printf("\n 2.Check Out A  Current Guest ");
+printf("\n 3.View List Of All Guests");
+printf("\n 4.exit");
+printf("\n Choose From 1 to 4");
+scanf("\n %d",&choose);
+switch(choose){
+    case 1 :
+    create();
+    break;
+    case 2 :
+    delete();
+    break;
+    case 3 :
+    list();
+    break;
+    case 4 :
+    exit(1);
+    
+}
+} while(choose!=4);
+
+
+
+
+
+  
+ 
+    
+
+  
+    return 0;
+}}
+
